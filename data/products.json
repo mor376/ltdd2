@@ -2,72 +2,84 @@
   {
     "id": 1,
     "name": "Tai nghe Bluetooth Không dây Over-ear",
+    "oldPrice": "550.000 đ",
     "price": 450000,
     "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
   },
   {
     "id": 2,
     "name": "Đồng hồ Thông minh Smartwatch v2",
+    "oldPrice": "550.000 đ",
     "price": 1200000,
     "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
   },
   {
     "id": 3,
     "name": "Bàn phím Cơ Gaming LED RGB",
+    "oldPrice": "550.000 đ",
     "price": 850000,
     "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500"
   },
   {
     "id": 4,
     "name": "Chuột Không dây Ergonomic",
+    "oldPrice": "550.000 đ",
     "price": 350000,
     "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500"
   },
   {
     "id": 5,
     "name": "Loa Bluetooth Chống nước IPX7",
+    "oldPrice": "550.000 đ",
     "price": 690000,
     "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500"
   },
   {
     "id": 6,
     "name": "Balo Máy tính Chống nước 15.6 inch",
+    "oldPrice": "550.000 đ",
     "price": 290000,
     "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"
   },
   {
     "id": 7,
     "name": "Sạc Dự phòng Fast Charge 20.000mAh",
+    "oldPrice": "550.000 đ",
     "price": 520000,
     "image": "https://images.unsplash.com/photo-1609592424089-983196a6f1e2?w=500"
   },
   {
     "id": 8,
     "name": "Giá đỡ Điện thoại / Máy tính bảng",
+    "oldPrice": "550.000 đ",
     "price": 150000,
     "image": "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=500"
   },
   {
     "id": 9,
     "name": "Webcam HD 1080p Có Micro",
+    "oldPrice": "550.000 đ",
     "price": 480000,
     "image": "https://images.unsplash.com/photo-1587826080692-f439cd0b70da?w=500"
   },
   {
     "id": 10,
     "name": "Đèn Học Chống Cận LED Đa Năng",
+    "oldPrice": "550.000 đ",
     "price": 220000,
     "image": "https://images.unsplash.com/photo-1534073828943-f801091bb18c?w=500"
   },
   {
     "id": 11,
     "name": "USB Flash Drive 64GB 3.0",
+    "oldPrice": "550.000 đ",
     "price": 180000,
     "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500"
   },
   {
     "id": 12,
     "name": "Micro Thu Âm Condenser USB",
+    "oldPrice": "550.000 đ",
     "price": 950000,
     "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500"
   }
