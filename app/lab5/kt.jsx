@@ -11,7 +11,6 @@ import {
   StatusBar,
 } from 'react-native';
 
-// Import dữ liệu sản phẩm từ D:\ccq2411c-app\data\products.json
 import productsData from '../../data/products.json';
 
 const categories = ['Tai nghe', 'Đồng hồ', 'Bàn phím', 'Chuột', 'Loa', 'Balo'];
@@ -25,12 +24,18 @@ export default function KtScreen() {
     setProducts(dataFilter);
   }, [limit]);
 
-  // Card hiển thị từng sản phẩm (Tất cả dùng chung ảnh assets/bg.jpg)
   const ProductCard = ({ item }) => {
+    // Tự động tính giá cũ (cộng thêm 20% so với giá bán) nếu trong JSON chưa có oldPrice
+    const originalPrice = item.oldPrice
+      ? item.oldPrice
+      : item.price
+      ? `${Math.round(item.price * 1.2).toLocaleString('vi-VN')} đ`
+      : null;
+
     return (
       <View style={styles.card}>
         <Image
-          source={require('../../assets/bg.jpg')} // Tất cả ảnh sản phẩm lấy từ assets/bg.jpg
+          source={require('../../assets/bg.jpg')}
           style={styles.image}
           resizeMode="cover"
         />
@@ -38,15 +43,22 @@ export default function KtScreen() {
           <Text style={styles.productName} numberOfLines={2}>
             {item.name}
           </Text>
-          <Text style={styles.productPrice}>
-            {item.price ? `${item.price.toLocaleString('vi-VN')} đ` : 'Liên hệ'}
-          </Text>
+          <View style={styles.priceRow}>
+            {/* Giá bán hiện tại */}
+            <Text style={styles.productPrice}>
+              {item.price ? `${item.price.toLocaleString('vi-VN')} đ` : 'Liên hệ'}
+            </Text>
+            
+            {/* Giá khuyến mãi / Giá cũ gạch ngang */}
+            {originalPrice && (
+              <Text style={styles.oldPrice}>{originalPrice}</Text>
+            )}
+          </View>
         </View>
       </View>
     );
   };
 
-  // Header giữ nguyên chuẩn như ảnh
   const HeaderBai1 = () => (
     <View style={styles.headerContainer}>
       <View style={styles.topBar}>
@@ -72,7 +84,6 @@ export default function KtScreen() {
     </View>
   );
 
-  // Footer nút Tải thêm
   const FooterBai1 = () => (
     <View style={styles.footer}>
       {limit < productsData.length && (
@@ -86,7 +97,6 @@ export default function KtScreen() {
     </View>
   );
 
-  // Danh sách rỗng
   const EmptyBai1 = () => (
     <View style={styles.emptyContainer}>
       <Text style={styles.emptyText}>Không tìm thấy thông tin sản phẩm</Text>
@@ -115,7 +125,7 @@ export default function KtScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFEBF3', // Nền hồng tím nhạt giống hệt ảnh gốc
+    backgroundColor: '#FFEBF3',
   },
   listContent: {
     paddingHorizontal: 12,
@@ -195,10 +205,21 @@ const styles = StyleSheet.create({
     marginBottom: 6,
     height: 36,
   },
+  priceRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+  },
   productPrice: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: 'bold',
     color: '#1B8E2D',
+  },
+  oldPrice: {
+    fontSize: 11,
+    color: '#888888',
+    textDecorationLine: 'line-through', // Gạch ngang giá gốc
   },
   footer: {
     alignItems: 'center',
